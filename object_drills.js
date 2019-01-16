@@ -26,3 +26,32 @@ function loop (obj){
 loop(obj);
 
 //
+
+const food ={
+    meals: ['breakfast', 'second breakfast', 'elevenses', 
+    'lunch', 'afternoon tea', 
+    'dinner', 'supper']
+}
+
+console.log(food.meals[3]);
+
+const person1= {
+    name: 'John',
+    jobTitle: 'Plumber'
+
+}
+const person2= {
+    name: 'Sandra',
+    jobTitle: 'Fire fighter'
+
+}
+const person3= {
+    name: 'Deb',
+    jobTitle: 'Engineer'
+}
+
+const personArr =[person1, person2, person3];
+
+for(let i=0; i< personArr.length; i++){
+    console.log(`${personArr[i].name}: ${personArr[i].jobTitle}`);
+}
