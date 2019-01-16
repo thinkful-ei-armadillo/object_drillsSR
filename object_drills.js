@@ -73,21 +73,47 @@ const cipher= {
     c: 4,
     d: 5
 }
-function decode(str, cipher){
-    for( let key in cipher){
-        if(key === str.charAt[0]){
-            return str.charAt(cipher[key]);
-        }
-    }
-}
+// function decode(str, cipher){
+//     switch(str) {
+//         case 'a':
+//           decodedWords += splitWords[i][cipher.a -1];
+//           break;
+//         case 'b':
+//          decodedWords += splitWords[i][cipher.b -1];
+//          break;
+//         case 'c':
+//          decodedWords += splitWords[i][cipher.c -1];
+//          break;
+//         case 'd':
+//          decodedWords += splitWords[i][cipher.d -1];
+//          break;
+//         default:
+//           decodedWords += ' ';
+//       }
+// }
 
-  function decodeWords(words) {
-      let decodedWords= '';
+ function decodeWords(words, cipher) {
+    let decodedWords= '';
     const splitWords = words.split(' ');
     for( let i =0; i < splitWords.length; i++){
-        return decode(splitWords[i], cipher);
+        switch(splitWords[i][0]) {
+            case 'a':
+              decodedWords += splitWords[i][cipher.a -1];
+              break;
+            case 'b':
+             decodedWords += splitWords[i][cipher.b -1];
+             break;
+            case 'c':
+             decodedWords += splitWords[i][cipher.c -1];
+             break;
+            case 'd':
+             decodedWords += splitWords[i][cipher.d -1];
+             break;
+            default:
+              decodedWords += ' ';
+          }
     }
-    
-  }
+    return decodedWords;
+}
 
   console.log(decodeWords(words, cipher));
