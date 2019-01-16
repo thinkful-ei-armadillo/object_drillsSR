@@ -37,21 +37,31 @@ console.log(food.meals[3]);
 
 const person1= {
     name: 'John',
-    jobTitle: 'Plumber'
-
+    jobTitle: 'Pumber',
+    boss: "Sandra"
 }
 const person2= {
     name: 'Sandra',
-    jobTitle: 'Fire fighter'
-
+    jobTitle: 'Fire fighter',
+    boss: "Deb"
 }
 const person3= {
     name: 'Deb',
-    jobTitle: 'Engineer'
+    jobTitle: 'Engineer',
 }
 
 const personArr =[person1, person2, person3];
 
 for(let i=0; i< personArr.length; i++){
     console.log(`${personArr[i].name}: ${personArr[i].jobTitle}`);
+}
+
+//"${title} ${name} reports to ${boss}."
+
+for(let i=0; i< personArr.length; i++){
+    if (personArr[i].boss !== undefined) {
+        console.log(`${personArr[i].jobTitle} ${personArr[i].name} resports to ${personArr[i].boss}`);
+    }  else {
+        console.log(`${personArr[i].name} reports to nobody`);
+    }
 }
