@@ -65,3 +65,29 @@ for(let i=0; i< personArr.length; i++){
         console.log(`${personArr[i].name} reports to nobody`);
     }
 }
+
+const words = 'craft block argon meter bells brown croon droop';
+const cipher= {
+    a: 2,
+    b: 3,
+    c: 4,
+    d: 5
+}
+function decode(str, cipher){
+    for( let key in cipher){
+        if(key === str.charAt[0]){
+            return str.charAt(cipher[key]);
+        }
+    }
+}
+
+  function decodeWords(words) {
+      let decodedWords= '';
+    const splitWords = words.split(' ');
+    for( let i =0; i < splitWords.length; i++){
+        return decode(splitWords[i], cipher);
+    }
+    
+  }
+
+  console.log(decodeWords(words, cipher));
