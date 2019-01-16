@@ -117,3 +117,64 @@ const cipher= {
 }
 
   console.log(decodeWords(words, cipher));
+
+
+  function createCharacter(name, nickname, race, origin, attack, defense){
+    return{
+        name,
+        nickname,
+        race,
+        origin,
+        attack,
+        defense,
+        describe: function(){
+        console.log(`${this.name} is a ${this.race} from ${this.origin} and uses ${this.equip}.`)
+        },
+        evaluateFight: function(character){
+            if( this.defense > this.attack){
+                return `take zero damage`;
+            }
+            return `Your opponet takes ${this.attack} damage and you receive ${this.defense} damage.`;
+        },   
+    }
+  }
+
+
+  const character1 = new createCharacter('Gandolf', 'Gandolf', 'wizard', 'Middle Earth', 10, 6);
+  console.log(character1);
+  
+  const character2 = new createCharacter('Bilbo', 'Bilbo', 'hobbit', 'The Shire', 2, 1);
+
+
+const character3= new createCharacter('Arwen Undomiel', 'Arwen', 'half-elf', 'Rivendell', 1, 9);
+
+
+const charactersArr = [character1, character2, character3];
+console.log(charactersArr);
+
+charactersArr.find(function(arr){
+    if( arr.nickname === 'Bilbo' ){
+        return arr.describe();
+    }
+})
+const newArray = charactersArr.filter(function(array){
+    return array.race === 'hobbit'
+    });
+console.log(newArray);
+
+createCharacter.prototype.equip= function(...weapon){
+    return {weapon};
+}
+
+createCharacter.prototype.describe= function(){
+    return `${this.name} is from ${this.origin} and uses .`
+}
+
+character1.equip = 'sword';
+character2.equip = 'rock';
+character3.equip = 'water';
+console.log(character1);
+character1.describe();
+console.log(character3);
+character3.describe();
+console.log(character2);
